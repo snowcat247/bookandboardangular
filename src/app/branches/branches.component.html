@@ -1,0 +1,17 @@
+
+<li id="branch-list" *ngFor="let branch of branches">
+  <div class="content">
+    <tr>
+    <td>
+        <img src="./assets/branches/{{branch.BranchImage}}" />
+        </td>
+        <td>
+    <h3>{{branch.BranchName}}</h3>
+    <p>{{branch.BranchAddress}}</p>
+        <a href="mailto:{{branch.BranchEmailAddress}}">Email Branch</a>
+    </td>
+    </tr>
+  </div>
+</li>
+
+

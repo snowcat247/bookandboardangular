@@ -2,6 +2,7 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+
   "projects": {
     "my-app": {
       "root": "",
@@ -22,9 +23,10 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.css"
-            ],
+                     "styles": [
+  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "src/styles.css"
+],
             "scripts": []
           },
           "configurations": {
@@ -58,6 +60,8 @@
             }
           }
         },
+
+          
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
@@ -111,6 +115,7 @@
             }
           }
         },
+          
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
