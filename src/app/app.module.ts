@@ -15,12 +15,14 @@ import { NavigationbarComponent } from './navigationbar/navigationbar.component'
 import { BranchesComponent } from './branches/branches.component';
 import { HolidayPackageFormComponent } from './holiday-package-form/holiday-package-form.component';
 import { LoginComponent } from './login/login.component';
-
+import { AppRoutingModule } from './app.routes';
+/*
 const appRoutes: Routes = [
   { path: 'holidaypackages', component: HolidaypackagesComponent },
    { path: 'branches', component: BranchesComponent },
     { path: 'login', component: LoginComponent },
 ];
+*/
 
 @NgModule({
   declarations: [
@@ -37,10 +39,13 @@ const appRoutes: Routes = [
     HttpModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AppRoutingModule
+    /*
      RouterModule.forRoot(
-      appRoutes,
+      approutes,
       { enableTracing: true } // <-- debugging purposes only
     )
+    */
   ],
   providers: [],
   bootstrap: [AppComponent]

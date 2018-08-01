@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { BranchService } from './holidaypackage.service';
+import { HolidayPackageService } from './holidaypackage.service';
 
 describe('BranchService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [BranchService]
+      providers: [HolidayPackageService]
     });
   });
 
-  it('should be created', inject([BranchService], (service: BranchService) => {
+  it('should be created', inject([HolidayPackageService], (service: HolidayPackageService) => {
     expect(service).toBeTruthy();
   }));
 });
