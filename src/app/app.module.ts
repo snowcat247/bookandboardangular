@@ -16,6 +16,8 @@ import { BranchesComponent } from './branches/branches.component';
 import { HolidayPackageFormComponent } from './holiday-package-form/holiday-package-form.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app.routes';
+import { LoginsuccessstaffComponent } from './loginsuccessstaff/loginsuccessstaff.component';
+import { CustomeraccountswitchComponent } from './customeraccountswitch/customeraccountswitch.component';
 /*
 const appRoutes: Routes = [
   { path: 'holidaypackages', component: HolidaypackagesComponent },
@@ -31,7 +33,9 @@ const appRoutes: Routes = [
     NavigationbarComponent,
     BranchesComponent,
     HolidayPackageFormComponent,
-    LoginComponent
+    LoginComponent,
+    LoginsuccessstaffComponent,
+    CustomeraccountswitchComponent
   ],
   imports: [
     BrowserModule,

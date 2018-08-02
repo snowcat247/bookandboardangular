@@ -8,6 +8,8 @@ import { NavigationbarComponent } from './navigationbar/navigationbar.component'
 import { BranchesComponent } from './branches/branches.component';
 import { HolidayPackageFormComponent } from './holiday-package-form/holiday-package-form.component';
 import { LoginComponent } from './login/login.component';
+import { LoginsuccessstaffComponent } from './loginsuccessstaff/loginsuccessstaff.component';
+
 
 import { 
     AuthcheckandrouteService as Auth 
@@ -16,7 +18,8 @@ import {
 const approutes: Routes = [
     { path: 'holidaypackages', component: HolidaypackagesComponent, canActivate: [Auth] },
     { path: 'branches', component: BranchesComponent },
-     { path: 'login', component: LoginComponent }
+     { path: 'login', component: LoginComponent },
+     { path: 'loginsuccessstaff', component: LoginsuccessstaffComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(approutes)],

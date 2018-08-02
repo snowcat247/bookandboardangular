@@ -1,8 +1,8 @@
 <form [formGroup] = "form" (ngSubmit) = "onSubmit()">
+  <label>User Name</label>
   <input name="UserName" formControlName="UserName">
+  <label>Password </label>
   <input name="Password" type=password formControlName="Password">
   <button type="submit">Save</button>
  </form>
 {{authenticated}}
-{{myusername}}
-{{mypassword}}

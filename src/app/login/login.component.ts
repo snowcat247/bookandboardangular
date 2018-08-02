@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { UserauthenticationService } from '../userauthentication.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ authenticated : string;
 
 
  
-  constructor(private authservice : UserauthenticationService) {
+  constructor(private authservice : UserauthenticationService,public router: Router) {
 
     this.form = new FormGroup({
       UserName: new FormControl(),
@@ -35,7 +36,6 @@ authenticated : string;
 
   ngOnInit() {
   
-  
     
 //this.getResponse();
   }
@@ -47,10 +47,15 @@ setval(){this.auth = this.authenticated};
   this.authservice.sendCredentials(this.myusername,this.mypassword)
 .subscribe(
 data =>{ this.authenticated = data;
-this.setLocalStorage(data);})  ;
+this.setLocalStorage(data);
+this.router.navigateByUrl('/holidaypackages');
+})  ;
 
 this.ngOnChanges();
   }
+
+
+
  
  onSubmit()
  {
@@ -59,7 +64,8 @@ this.ngOnChanges();
  this.mypassword = this.form.value.Password;
  this.getResponse();
 
- 
+
+
 // this is working, now need to add local storage
 //this.setLocalStorage();
 //console.log(this.authenticated);
@@ -74,7 +80,11 @@ this.ngOnChanges();
   localStorage.clear();
 
   localStorage.setItem('isAuth', this.authenticated);
+  
   console.log(localStorage.getItem('isAuth'));
+  var c = localStorage.getItem('isAuth');
+
+  
  }
  // getAllHolidayPackages() {
 //this.holidaypackageservice.getAllHolidayPackages()

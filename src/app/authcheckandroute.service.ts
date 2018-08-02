@@ -12,9 +12,18 @@ export class AuthcheckandrouteService implements CanActivate {
 
   canActivate(): boolean {
     if (!this.auth.isAuthenticated()) {
-      this.router.navigate(['login']);
+      this.router.navigateByUrl('/login');
       return false;
     }
-    return true;
+    else
+    {
+      
+      return true;
+    }
+   
+      
+      
+  
+    
 }
 }
