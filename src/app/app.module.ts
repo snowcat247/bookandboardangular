@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app.routes';
 import { LoginsuccessstaffComponent } from './loginsuccessstaff/loginsuccessstaff.component';
 import { CustomeraccountswitchComponent } from './customeraccountswitch/customeraccountswitch.component';
+import { FilterdataPipe } from './filterdata.pipe';
 /*
 const appRoutes: Routes = [
   { path: 'holidaypackages', component: HolidaypackagesComponent },
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
     HolidayPackageFormComponent,
     LoginComponent,
     LoginsuccessstaffComponent,
-    CustomeraccountswitchComponent
+    CustomeraccountswitchComponent,
+    FilterdataPipe
   ],
   imports: [
     BrowserModule,

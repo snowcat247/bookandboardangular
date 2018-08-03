@@ -48,7 +48,6 @@ setval(){this.auth = this.authenticated};
 .subscribe(
 data =>{ this.authenticated = data;
 this.setLocalStorage(data);
-this.router.navigateByUrl('/holidaypackages');
 })  ;
 
 this.ngOnChanges();
@@ -86,11 +85,7 @@ this.ngOnChanges();
 
   
  }
- // getAllHolidayPackages() {
-//this.holidaypackageservice.getAllHolidayPackages()
-//.subscribe(
-//data => this.holidaypackages = data,
-//errorCode => this.statusCode = errorCode);
+
 
 }
 

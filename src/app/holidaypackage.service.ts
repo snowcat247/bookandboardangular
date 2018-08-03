@@ -23,6 +23,43 @@ export class HolidayPackageService {
 		   		.map(this.extractData)
 		        .catch(this.handleError);
     }
+
+postHolidayImage(file : File)
+{
+
+  let input = new FormData();
+  input.append("file", file);
+
+  console.log(file);
+const imageposturl = 'http://localhost:54933/api/Images';
+let headers = new Headers({'Content-Type': 'application/json'});
+
+
+let options = new RequestOptions({ headers: headers });
+  return this.http.post(imageposturl,input);
+
+}
+
+    postHolidayPackage(holiday : HolidayPackage) : Observable<any>
+    {
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+      return this.http.post(this.holidaypackageUrl, holiday, options)
+                 .map(this.extractData)
+                 .catch(this.handleError);
+    }
+/*
+    postHolidayPackage(holidaypackage : HolidayPackage) : Observable<number>{
+
+      let cpHeaders = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: cpHeaders });
+      return this.http.post(this.holidaypackageUrl, holidaypackage, options
+        .map(success => success.status)
+        .catch(this.handleError));
+
+
+    }
+    */
 	//Create article
    // createArticle(article: Article):Observable<number> {
 //	    let cpHeaders = new Headers({ 'Content-Type': 'application/json' });

@@ -16,10 +16,11 @@ import {
   } from './authcheckandroute.service';
 
 const approutes: Routes = [
-    { path: 'holidaypackages', component: HolidaypackagesComponent, canActivate: [Auth] },
+    { path: 'holidaypackages', component: HolidaypackagesComponent,canActivate: [Auth] },
     { path: 'branches', component: BranchesComponent },
      { path: 'login', component: LoginComponent },
-     { path: 'loginsuccessstaff', component: LoginsuccessstaffComponent }
+     { path: 'loginsuccessstaff', component: LoginsuccessstaffComponent },
+     { path: 'uploadholiday', component: HolidayPackageFormComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(approutes)],

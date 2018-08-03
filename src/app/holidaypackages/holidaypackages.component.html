@@ -1,4 +1,26 @@
-
+  <!--
   <li  id="branch-list" *ngFor="let holiday of holidaypackages">
      <p>{{holiday.HolidayPackageId}}</p>
 </li>
+-->
+  <table border =1>
+    <thead>
+      <tr>
+        <th colspan="4">Search :
+          <input type="text" [(ngModel)]="queryString">
+        </th>
+      </tr>
+      <tr>
+        <th style="width:40px;max-width:40px;">#</th>
+        <th style="width:60px;max-width:100px;">HolidayPackageName</th>
+        <th style="width:60px;max-width:50px;">Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ex of holidaypackages| filterdata: queryString : 'HolidayPackageName'; let i = index ">
+        <td>{{i+1}}</td>
+        <td>{{ex.HolidayPackageName}}</td>
+        <td>{{ex.HolidayPackageDescription}}</td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,3 +1,69 @@
-<p>
-  holiday-package-form works!
-</p>
+<div class="container">
+    <form [formGroup]="form" (ngSubmit) = "submit(form.value)" >
+      <div class="row">
+        <div class="col-25">
+          <label for="packagename">Holiday Package Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="packagename" name="packagename" formControlName="holidayPackageName"> 
+      </div>
+        
+      </div>
+      <div class="row">
+          <div class="col-25">
+            <label for="packagedescription">Package Description</label>
+          </div>
+          <div class="col-75">
+            <textarea id="packagedescription" name="packagedescription" formControlName="holidayPackageDescription" style="height:200px"></textarea>
+          </div>
+        </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="startdate">Start Date</label>
+        </div>
+        <div class="col-75">
+          <input type="date" id="startdate" name="startdate" formControlName="holidayStartDate" >
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-25">
+            <label for="enddate">End Date</label>
+          </div>
+          <div class="col-75">
+            <input type="date" id="enddate" name="enddate" formControlName="holidayEndDate" >
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+              <label for="price">Price</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="price" name="price" formControlName="holidayPrice" >
+            </div>
+          </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="country">Country</label>
+        </div>
+        <div class="col-75">
+          <select id="country" name="country" formControlName="holidayPackageTypeId">
+            <option value="1">Flight</option>
+            <option value="2">Hotel</option>
+            <option value="3">Flight and Hotel</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-25">
+              <label for="holidayimage">Choose Image to Upload</label>
+            </div>
+          <div class="col-75">
+          <input #file type="file" id="holidayimage" formControlName="holidayImagePath" (change)="fileEvent($event)" >
+          </div> 
+        </div>
+      <div class="row">
+        <input type="submit" value="Add to Website">
+      </div>
+    </form>
+  </div>
+  {{result}}
